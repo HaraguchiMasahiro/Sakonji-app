@@ -8,6 +8,8 @@
       <div class="card-body">
         <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
       </div>
+      <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Destroy',@user, method: :delete, data:{confirm:'本当に削除してよろしいですか？'},class: 'btn btn-lg btn-danger'%>
     </div>
   </aside>
   <div class="col-sm-8">
