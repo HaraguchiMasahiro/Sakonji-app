@@ -1,2 +1,12 @@
-<h1>Microposts#edit</h1>
-<p>Find me in app/views/microposts/edit.html.erb</p>
+<h1>id: <%= @micropost.id %> の編集ページ</h1>
+
+<%= form_with(model: @micropost, local: true) do |f| %>
+<div class="form-group">
+  <%= f.text_field :content, class: 'form-control', rows: 5 %>
+</div>
+
+  <%= f.submit 'Update', class: 'btn btn-dark btn-sm'%>
+<% end %>
+
+<%= link_to '戻る',:back, class:'btn btn-primary btn-sm'%>
+

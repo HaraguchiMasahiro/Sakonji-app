@@ -15,9 +15,19 @@ class MicropostsController < ApplicationController
   end
 
   def edit
+    @micropost=Micropost.find(params[:id])
   end
 
   def update
+    @micropost=Micropost.find(params[:id])
+    if @micropost.update(micropost_params)
+      flash[:success]='Micropost は正常に更新されました'
+      redirect_to root_path
+    else
+      flash.now[:danger]='Micropost は更新されませんでした'
+      render :edit
+    end
+    
   end
 
   def destroy
@@ -29,7 +39,7 @@ class MicropostsController < ApplicationController
   private
   
   def micropost_params
-    params.permit(:content)
+    params.require(:micropost).permit(:content)
   end
   
   def correct_user
