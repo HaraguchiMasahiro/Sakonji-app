@@ -36,10 +36,10 @@ class UsersController < ApplicationController
     @user=User.find(params[:id])
     
     if @user.update(user_params)
-      flash[:success]="User は正常に更新されました。"
+      flash[:success]="ユーザは正常に更新されました。"
       redirect_to @user
     else
-      flash.now[:danger]="User は更新されませんでした。"
+      flash.now[:danger]="ユーザは更新されませんでした。"
       render :edit
     end
   end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     @user=User.find(params[:id])
     @user.destroy
     
-    flash[:success]='User は正常に削除されました'
+    flash[:success]='ユーザは正常に削除されました'
     redirect_to root_url
   end
   
