@@ -1,5 +1,5 @@
 <div class="text-center">
-    <h1>Sign up</h1>
+    <h1>サインアップ</h1>
 </div>
 
 <div class="row">
@@ -8,30 +8,30 @@
     <%= form_with(model: @user,local: true) do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class="form-group">
-        <%= f.label :name, 'Name' %>
+        <%= f.label :name, '名前' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :email, 'Email' %>
+        <%= f.label :email, 'メール' %>
         <%= f.email_field :email, class: 'form-control' %>
       </div>
       
       <div class="form-group">
-        <%= f.label :favorite_character, 'Favorite-Character' %>
+        <%= f.label :favorite_character, '好きなキャラクター' %>
         <%= f.text_field :favorite_character, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password, 'Password' %>
+        <%= f.label :password, 'パスワード' %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, 'Confirmation' %>
+        <%= f.label :password_confirmation, '確認' %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
       
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+      <%= f.submit 'サインアップ', class: 'btn btn-primary btn-block' %>
     
     <% end %>
   </div>
